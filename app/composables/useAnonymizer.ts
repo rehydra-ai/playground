@@ -108,8 +108,22 @@ export function useAnonymizer() {
       } catch (err) {
         // Revert on failure
         nerEnabled.value = false;
-        initError.value =
+
+        // Check if this is a CORS/network error (common in Firefox with Hugging Face)
+        const errorMessage =
           err instanceof Error ? err.message : "Failed to load NER model";
+        const isCorsOrNetworkError =
+          errorMessage.includes("NetworkError") ||
+          errorMessage.includes("CORS") ||
+          errorMessage.includes("Failed to download");
+
+        if (isCorsOrNetworkError) {
+          initError.value =
+            "NER model download failed due to browser restrictions. Try using Chrome or Edge, or continue with regex-only mode.";
+        } else {
+          initError.value = errorMessage;
+        }
+
         initStatus.value = "Error loading NER";
         console.error("NER initialization failed:", err);
 
