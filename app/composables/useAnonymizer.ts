@@ -1,5 +1,5 @@
 /**
- * Anonymizer composable using @elanlanguages/bridge-anonymization
+ * Anonymizer composable using rehydra
  * Provides PII detection, anonymization, and rehydration for browser use
  */
 import {
@@ -9,7 +9,7 @@ import {
   rehydrate,
   type AnonymizationResult,
   type Anonymizer,
-} from "@elanlanguages/bridge-anonymization";
+} from "rehydra";
 
 interface SessionData {
   encryptedPiiMap: AnonymizationResult["piiMap"];

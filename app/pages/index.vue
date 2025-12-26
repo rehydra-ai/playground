@@ -438,16 +438,10 @@ const currentStepIndex = computed(() => {
       @contextmenu="showContextMenu">
       <!-- Desktop Icons -->
       <div class="absolute top-4 left-4 flex flex-col gap-4">
-        <!-- SCRUBBER Icon -->
+        <!-- rehydra.ai Icon -->
         <div class="desktop-icon" @dblclick="openWindow" @click="isMobile && openWindow()">
-          <div class="desktop-icon-image">
-            <svg viewBox="0 0 24 24" fill="none" class="w-10 h-10">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#000080" stroke="#000" stroke-width="1" />
-              <path d="M12 20s6-3 6-8V6l-6-2.5L6 6v6c0 5 6 8 6 8z" fill="#4169e1" />
-              <text x="12" y="14" text-anchor="middle" fill="#fff" font-size="6" font-weight="bold">S</text>
-            </svg>
-          </div>
-          <span class="desktop-icon-label">SCRUBBER</span>
+          <RehydraIconPixel :size="48" />
+          <span class="desktop-icon-label">rehydra</span>
         </div>
 
         <!-- About.txt Icon -->
@@ -483,10 +477,8 @@ const currentStepIndex = computed(() => {
             'cursor-default': isMaximized
           }" @mousedown="startDrag" @dblclick="toggleMaximize">
             <div class="flex items-center gap-2 pointer-events-none">
-              <img
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E"
-                alt="" class="w-4 h-4">
-              <span>SCRUBBER - PII Anonymization Tool</span>
+              <RehydraIconPixel :size="16" color="white" />
+              <span>rehydra.ai - PII Anonymization</span>
             </div>
             <div class="flex gap-0.5 pointer-events-auto">
               <button class="win-title-btn" title="Minimize" @click.stop="minimizeWindow">_</button>
@@ -650,11 +642,10 @@ Card: 4111-1111-1111-1111"
           <!-- Status bar -->
           <div class="win-statusbar flex justify-between">
             <div class="flex gap-2">
-              <span class="win-status-field">bridge-anonymization</span>
               <span class="win-status-field">{{ nerEnabled ? 'NER + Regex' : 'Regex' }}</span>
               <span class="win-status-field">Client-side</span>
             </div>
-            <span class="win-status-field">v1.0.0</span>
+            <span class="win-status-field">v0.1.0</span>
           </div>
         </div>
       </Transition>
@@ -665,7 +656,7 @@ Card: 4111-1111-1111-1111"
       <div v-if="startMenuOpen" ref="startMenuRef" class="start-menu">
         <!-- Windows 95 style sidebar -->
         <div class="start-menu-sidebar">
-          <span class="start-menu-sidebar-text">SCRUBBER</span>
+          <span class="start-menu-sidebar-text">rehydra.ai</span>
         </div>
 
         <!-- Menu content -->
@@ -673,17 +664,15 @@ Card: 4111-1111-1111-1111"
           <!-- Info items -->
           <div class="start-menu-info">
             <div class="flex items-center gap-2 mb-2">
-              <img
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23000080' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E"
-                alt="" class="w-8 h-8">
+              <RehydraIconPixel :size="24" color="black" />
               <div>
-                <div class="font-bold text-[12px]">SCRUBBER</div>
-                <div class="text-[10px] text-[#606060]">PII Anonymization Tool</div>
+                <div class="font-bold text-[12px]">rehydra.ai</div>
+                <div class="text-[10px] text-[#606060]">PII Anonymization</div>
               </div>
             </div>
             <div class="text-[10px] text-[#404040] leading-relaxed">
-              <p class="mb-1">Version 1.0.0</p>
-              <p class="mb-1">© 2025 Tom Jordi Ruesch</p>
+              <p class="mb-1">Version 0.1.0</p>
+              <p class="mb-1">© 2025 rehydra.ai</p>
               <p>All rights reserved.</p>
             </div>
           </div>
@@ -831,13 +820,13 @@ Card: 4111-1111-1111-1111"
             :class="{ 'h-[420px]': !isMobile }">
             <pre class="font-mono text-[11px] whitespace-pre-wrap">
           ══════════════════════════════════════════════
-          SCRUBBER v1.0.0
+          rehydra.ai v0.1.0
           PII Anonymization Tool
           ══════════════════════════════════════════════
 
-          WHAT IS SCRUBBER?
+          WHAT IS rehydra.ai?
           ─────────────────
-          SCRUBBER is a privacy-first tool that removes
+          rehydra.ai is a privacy-first tool that removes
           Personally Identifiable Information (PII) from
           text before you share it with AI services like
           ChatGPT, Claude, or other language models.
@@ -845,7 +834,7 @@ Card: 4111-1111-1111-1111"
           HOW IT WORKS
           ────────────
           1. SCRUB: Paste your text into the tool.
-          SCRUBBER detects and replaces sensitive
+          rehydra.ai detects and replaces sensitive
           data (emails, phones, names, addresses,
           credit cards, etc.) with anonymous tags.
 
@@ -853,8 +842,8 @@ Card: 4111-1111-1111-1111"
           or any AI service. Your private data never
           leaves your device.
 
-          3. RESTORE: Paste the AI's response back into
-          SCRUBBER. It automatically reinserts your
+          3. REHYDRATE: Paste the AI's response back into
+          rehydra.ai. It automatically reinserts your
           original data into the response.
 
           PRIVACY FEATURES
@@ -876,8 +865,8 @@ Card: 4111-1111-1111-1111"
 
           CREDITS
           ───────
-          Powered by <a href="https://github.com/elanlanguages/bridge-anonymization">bridge-anonymization</a>
-          © 2025 Tom Jordi Ruesch. All rights reserved.
+          Powered by <a href="https://github.com/rehydra-ai/rehydra">rehydra</a>
+          © 2025 rehydra.ai. All rights reserved.
         </pre>
           </div>
         </div>
@@ -909,10 +898,8 @@ Card: 4111-1111-1111-1111"
       <!-- Active window button (hidden when closed) -->
       <button v-if="!isClosed" class="taskbar-window-btn" :class="{ active: !isMinimized && focusedWindow === 'main' }"
         @click="isMinimized ? restoreWindow() : focusMainWindow()">
-        <img
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E"
-          alt="" class="w-3 h-3">
-        <span class="truncate">SCRUBBER - PII Anonymization Tool</span>
+        <RehydraIconPixel :size="16" color="black" />
+        <span class="truncate">rehydra.ai - PII Anonymization</span>
       </button>
 
       <!-- About window button -->

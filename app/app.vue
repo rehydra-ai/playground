@@ -13,7 +13,7 @@ useHead({
   }
 })
 
-const title = 'SCRUBBER - PII Anonymization Tool'
+const title = 'rehydra.ai - PII Anonymization'
 const description = 'Anonymize sensitive data before sending to ChatGPT, then restore it in the response.'
 
 useSeoMeta({
