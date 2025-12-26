@@ -5,8 +5,7 @@ useHead({
     { name: 'theme-color', content: '#3a6ea5' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' }
+    { rel: 'icon', href: '/favicon.svg' },
   ],
   htmlAttrs: {
     lang: 'en'
