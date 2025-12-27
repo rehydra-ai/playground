@@ -564,8 +564,7 @@ Card: 4111-1111-1111-1111"
                     </span>
                   </label>
                   <p class="text-[#606060] text-[10px] mt-1 ml-6">
-                    NER uses a ~265MB AI model. First load takes a few seconds.<br>
-                    <span class="text-[#808060]">Note: Firefox may block model downloads. Use Chrome/Edge if NER fails.</span>
+                    NER uses a ~265MB AI model. First load takes a few seconds.
                   </p>
                 </div>
 

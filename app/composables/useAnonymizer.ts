@@ -119,7 +119,7 @@ export function useAnonymizer() {
 
         if (isCorsOrNetworkError) {
           initError.value =
-            "NER model download failed due to browser restrictions. Try using Chrome or Edge, or continue with regex-only mode.";
+            "NER model download failed. Please check your connection and try again.";
         } else {
           initError.value = errorMessage;
         }
