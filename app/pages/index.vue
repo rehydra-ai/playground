@@ -645,7 +645,7 @@ Card: 4111-1111-1111-1111"
               <span class="win-status-field">{{ nerEnabled ? 'NER + Regex' : 'Regex' }}</span>
               <span class="win-status-field">Client-side</span>
             </div>
-            <span class="win-status-field">v0.1.0</span>
+            <span class="win-status-field">v0.3.1</span>
           </div>
         </div>
       </Transition>
@@ -671,7 +671,7 @@ Card: 4111-1111-1111-1111"
               </div>
             </div>
             <div class="text-[10px] text-[#404040] leading-relaxed">
-              <p class="mb-1">Version 0.1.0</p>
+              <p class="mb-1">Version 0.3.1</p>
               <p class="mb-1">© 2025 rehydra.ai</p>
               <p>All rights reserved.</p>
             </div>
@@ -820,7 +820,7 @@ Card: 4111-1111-1111-1111"
             :class="{ 'h-[420px]': !isMobile }">
             <pre class="font-mono text-[11px] whitespace-pre-wrap">
           ══════════════════════════════════════════════
-          rehydra.ai v0.1.0
+          rehydra.ai v0.3.1
           PII Anonymization Tool
           ══════════════════════════════════════════════
 

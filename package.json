@@ -1,5 +1,5 @@
 {
-  "name": "chatgpt-schrubber",
+  "name": "rehydra-playground",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,12 +11,12 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "rehydra": "^0.1.0",
     "@iconify-json/lucide": "^1.2.82",
-    "@iconify-json/simple-icons": "^1.2.63",
+    "@iconify-json/simple-icons": "^1.2.64",
     "@nuxt/ui": "^4.3.0",
     "nuxt": "^4.2.2",
-    "onnxruntime-web": "^1.21.0"
+    "onnxruntime-web": "^1.23.2",
+    "rehydra": "^0.3.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.12.1",
