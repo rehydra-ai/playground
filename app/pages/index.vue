@@ -307,6 +307,9 @@ const backgroundStyle = computed(() => {
   return { background: 'linear-gradient(180deg, #5a8cc2 0%, #3a6ea5 50%, #2d5a8a 100%)' }
 })
 
+// Route for query params
+const route = useRoute()
+
 onMounted(() => {
   initialize()
   updateClock()
@@ -316,6 +319,13 @@ onMounted(() => {
   // Mobile detection
   checkMobile()
   window.addEventListener('resize', checkMobile)
+
+  // Check if we should open the About dialog (from privacy page link)
+  if (route.query.openAbout) {
+    openAboutDialog()
+    // Clean up the URL
+    navigateTo('/', { replace: true })
+  }
 })
 
 onUnmounted(() => {
@@ -460,6 +470,22 @@ const currentStepIndex = computed(() => {
             </svg>
           </div>
           <span class="desktop-icon-label">About.txt</span>
+        </div>
+
+        <!-- Privacy Policy Icon -->
+        <div class="desktop-icon" @dblclick="navigateTo('/privacy')" @click="isMobile && navigateTo('/privacy')">
+          <div class="desktop-icon-image">
+            <svg viewBox="0 0 24 24" fill="none" class="w-10 h-10">
+              <!-- Shield shape -->
+              <path d="M12 2L4 6v6c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z" fill="#4a90d9" stroke="#000080"
+                stroke-width="1" />
+              <!-- Lock icon on shield -->
+              <rect x="9" y="10" width="6" height="5" fill="#fff" stroke="#808080" stroke-width="0.5" rx="1" />
+              <path d="M10 10V8.5a2 2 0 014 0V10" fill="none" stroke="#808080" stroke-width="1" />
+              <circle cx="12" cy="12.5" r="0.75" fill="#000080" />
+            </svg>
+          </div>
+          <span class="desktop-icon-label">Privacy</span>
         </div>
       </div>
       <!-- Window -->
@@ -676,6 +702,13 @@ Card: 4111-1111-1111-1111"
               <p>All rights reserved.</p>
             </div>
           </div>
+
+          <div class="start-menu-separator" />
+
+          <NuxtLink to="/privacy" class="start-menu-item" @click="startMenuOpen = false">
+            <span class="start-menu-icon">🛡️</span>
+            <span>Privacy Policy</span>
+          </NuxtLink>
 
           <div class="start-menu-separator" />
 
