@@ -82,10 +82,13 @@ export function useAnonymizer() {
           ner: {
             mode: "quantized",
             autoDownload: true,
-            onStatus: (status) => {
+            onStatus: (status: string) => {
               initStatus.value = status;
             },
-            onDownloadProgress: (progress) => {
+            onDownloadProgress: (progress: {
+              file: string;
+              percent: number | null;
+            }) => {
               nerLoadProgress.value = `${progress.file}: ${Math.round(
                 progress.percent ?? 0
               )}%`;
@@ -94,7 +97,7 @@ export function useAnonymizer() {
           semantic: {
             enabled: true,
             autoDownload: true,
-            onStatus: (status) => {
+            onStatus: (status: string) => {
               initStatus.value = status;
             },
           },

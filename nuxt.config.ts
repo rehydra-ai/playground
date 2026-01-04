@@ -35,9 +35,11 @@ export default defineNuxtConfig({
 
   vite: {
     optimizeDeps: {
-      exclude: ["onnxruntime-web", "onnxruntime-node"],
+      exclude: ["onnxruntime-web", "onnxruntime-node", "rehydra"],
     },
     resolve: {
+      // Ensure Vite uses browser-specific exports from rehydra
+      conditions: ["browser", "import", "module", "default"],
       alias: {
         // Force onnxruntime-node to resolve to onnxruntime-web in browser
         "onnxruntime-node": "onnxruntime-web",
@@ -45,6 +47,10 @@ export default defineNuxtConfig({
     },
     worker: {
       format: "es",
+    },
+    // Ensure proper handling of ESM modules
+    build: {
+      target: "esnext",
     },
   },
 });

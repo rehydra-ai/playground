@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
       setHeader(event, "Access-Control-Allow-Origin", "*");
       setHeader(event, "Access-Control-Allow-Methods", "GET, OPTIONS");
       setHeader(event, "Access-Control-Allow-Headers", "Range, Content-Type");
-      setHeader(event, "Access-Control-Max-Age", "86400");
+      setHeader(event, "Access-Control-Max-Age", 86400);
       return null;
     }
 
@@ -42,8 +42,6 @@ export default defineEventHandler(async (event) => {
     if (range) {
       fetchHeaders["Range"] = range;
     }
-
-    console.log("[HF-Proxy] Fetching:", targetUrl.substring(0, 100) + "...");
 
     // Fetch from Hugging Face - this will follow redirects to cas-bridge automatically
     const response = await fetch(targetUrl, {
@@ -60,8 +58,6 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    console.log("[HF-Proxy] Success, status:", response.status, "type:", response.headers.get("content-type"));
-
     // Get headers from the response
     const contentType =
       response.headers.get("content-type") || "application/octet-stream";
@@ -74,10 +70,14 @@ export default defineEventHandler(async (event) => {
     setHeader(event, "Access-Control-Allow-Origin", "*");
     setHeader(event, "Access-Control-Allow-Methods", "GET, OPTIONS");
     setHeader(event, "Access-Control-Allow-Headers", "Range, Content-Type");
-    setHeader(event, "Access-Control-Expose-Headers", "Content-Length, Content-Range, Accept-Ranges");
+    setHeader(
+      event,
+      "Access-Control-Expose-Headers",
+      "Content-Length, Content-Range, Accept-Ranges"
+    );
 
     if (contentLength) {
-      setHeader(event, "Content-Length", contentLength);
+      setHeader(event, "Content-Length", parseInt(contentLength));
     }
     if (acceptRanges) {
       setHeader(event, "Accept-Ranges", acceptRanges);
@@ -103,8 +103,9 @@ export default defineEventHandler(async (event) => {
 
     throw createError({
       statusCode: 500,
-      message: `Failed to proxy HuggingFace request: ${error instanceof Error ? error.message : "Unknown error"}`,
+      message: `Failed to proxy HuggingFace request: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`,
     });
   }
 });
-

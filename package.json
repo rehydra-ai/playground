@@ -15,8 +15,8 @@
     "@iconify-json/simple-icons": "^1.2.64",
     "@nuxt/ui": "^4.3.0",
     "nuxt": "^4.2.2",
-    "onnxruntime-web": "^1.23.2",
-    "rehydra": "^0.3.1"
+    "onnxruntime-web": "1.19.2",
+    "rehydra": "^0.3.3"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.12.1",

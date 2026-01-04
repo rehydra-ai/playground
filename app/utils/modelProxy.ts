@@ -43,9 +43,9 @@ function installProxy() {
         const queryString = urlObj.search.substring(1); // Remove leading ?
 
         // Redirect to our proxy
-        const proxyUrl = `/api/models/${path}${queryString ? `?${queryString}` : ""}`;
-
-        console.log("[ModelProxy] Proxying XetHub request:", url.substring(0, 80) + "...");
+        const proxyUrl = `/api/models/${path}${
+          queryString ? `?${queryString}` : ""
+        }`;
 
         // Call original fetch with proxied URL
         return originalFetch(proxyUrl, init);
@@ -63,8 +63,6 @@ function installProxy() {
         // Encode the full URL as a query param for our proxy
         const proxyUrl = `/api/hf-proxy?url=${encodeURIComponent(url)}`;
 
-        console.log("[ModelProxy] Proxying HuggingFace CDN request:", url.substring(0, 80) + "...");
-
         // Call original fetch with proxied URL
         return originalFetch(proxyUrl, init);
       } catch (error) {
@@ -77,8 +75,6 @@ function installProxy() {
     // For all other requests, use original fetch
     return originalFetch(input, init);
   };
-
-  console.log("[ModelProxy] Fetch proxy installed for Hugging Face model downloads");
 }
 
 // Auto-install proxy when module is imported (in browser)
@@ -90,4 +86,3 @@ if (typeof window !== "undefined") {
 export function setupModelProxy() {
   installProxy();
 }
-
