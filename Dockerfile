@@ -1,11 +1,14 @@
 # Source: https://nuxtjs.org/deployments/koyeb#dockerize-your-application
-FROM node:lts as builder
+FROM node:lts AS builder
 
-RUN npm install -g pnpm
+RUN corepack enable && corepack prepare pnpm@10.26.1 --activate
 
 WORKDIR /app
 
 COPY . .
+
+# .npmrc is excluded from zwrm uploads (dotfiles ignored), so inline its settings
+RUN echo "shamefully-hoist=true" > .npmrc
 
 RUN pnpm install --frozen-lockfile
 
