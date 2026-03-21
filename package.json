@@ -16,7 +16,7 @@
     "@nuxt/ui": "^4.3.0",
     "nuxt": "^4.2.2",
     "onnxruntime-web": "1.19.2",
-    "rehydra": "^0.3.3"
+    "rehydra": "^0.4.3"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.12.1",

@@ -24,8 +24,8 @@ importers:
         specifier: 1.19.2
         version: 1.19.2
       rehydra:
-        specifier: ^0.3.3
-        version: 0.3.3(onnxruntime-web@1.19.2)
+        specifier: ^0.4.3
+        version: 0.4.3(onnxruntime-web@1.19.2)
     devDependencies:
       '@nuxt/eslint':
         specifier: ^1.12.1
@@ -3785,11 +3785,11 @@ packages:
   onnxruntime-common@1.19.2:
     resolution: {integrity: sha512-a4R7wYEVFbZBlp0BfhpbFWqe4opCor3KM+5Wm22Az3NGDcQMiU2hfG/0MfnBs+1ZrlSGmlgWeMcXQkDk1UFb8Q==}
 
-  onnxruntime-common@1.23.2:
-    resolution: {integrity: sha512-5LFsC9Dukzp2WV6kNHYLNzp8sT6V02IubLCbzw2Xd6X5GOlr65gAX6xiJwyi2URJol/s71gaQLC5F2C25AAR2w==}
+  onnxruntime-common@1.24.3:
+    resolution: {integrity: sha512-GeuPZO6U/LBJXvwdaqHbuUmoXiEdeCjWi/EG7Y1HNnDwJYuk6WUbNXpF6luSUY8yASul3cmUlLGrCCL1ZgVXqA==}
 
-  onnxruntime-node@1.23.2:
-    resolution: {integrity: sha512-OBTsG0W8ddBVOeVVVychpVBS87A9YV5sa2hJ6lc025T97Le+J4v++PwSC4XFs1C62SWyNdof0Mh4KvnZgtt4aw==}
+  onnxruntime-node@1.24.3:
+    resolution: {integrity: sha512-JH7+czbc8ALA819vlTgcV+Q214/+VjGeBHDjX81+ZCD0PCVCIFGFNtT0V4sXG/1JXypKPgScQcB3ij/hk3YnTg==}
     os: [win32, darwin, linux]
 
   onnxruntime-web@1.19.2:
@@ -4258,8 +4258,8 @@ packages:
     resolution: {integrity: sha512-NZQZdC5wOE/H3UT28fVGL+ikOZcEzfMGk/c3iN9UGxzWHMa1op7274oyiUVrAG4B2EuFhus8SvkaYnhvW92p9Q==}
     hasBin: true
 
-  rehydra@0.3.3:
-    resolution: {integrity: sha512-ZvmBlCNy+IrdlJOuWcErb5/Q2gNjpTavltlJcZs7D11h2C4k9CZOIVLRcYjCBkqqBhm93n36ShK77E65irKhKQ==}
+  rehydra@0.4.3:
+    resolution: {integrity: sha512-wZ1PmNrjzlSFAyqppSYnK6LWTZs6Xsfxvg15E3pNSbaJKaQ7Ycrd+H3MlLRs4kzO0zuyMwp4VAl53DAjtENoBA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       better-sqlite3: ^11.0.0
@@ -9272,14 +9272,14 @@ snapshots:
 
   onnxruntime-common@1.19.2: {}
 
-  onnxruntime-common@1.23.2:
+  onnxruntime-common@1.24.3:
     optional: true
 
-  onnxruntime-node@1.23.2:
+  onnxruntime-node@1.24.3:
     dependencies:
       adm-zip: 0.5.16
       global-agent: 3.0.0
-      onnxruntime-common: 1.23.2
+      onnxruntime-common: 1.24.3
     optional: true
 
   onnxruntime-web@1.19.2:
@@ -9827,9 +9827,9 @@ snapshots:
     dependencies:
       jsesc: 3.1.0
 
-  rehydra@0.3.3(onnxruntime-web@1.19.2):
+  rehydra@0.4.3(onnxruntime-web@1.19.2):
     optionalDependencies:
-      onnxruntime-node: 1.23.2
+      onnxruntime-node: 1.24.3
       onnxruntime-web: 1.19.2
 
   reka-ui@2.6.1(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)):
