@@ -24,8 +24,8 @@ importers:
         specifier: 1.19.2
         version: 1.19.2
       rehydra:
-        specifier: ^0.4.3
-        version: 0.4.3(onnxruntime-web@1.19.2)
+        specifier: ^0.5.0
+        version: 0.5.0(onnxruntime-web@1.19.2)
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
@@ -4261,8 +4261,8 @@ packages:
     resolution: {integrity: sha512-NZQZdC5wOE/H3UT28fVGL+ikOZcEzfMGk/c3iN9UGxzWHMa1op7274oyiUVrAG4B2EuFhus8SvkaYnhvW92p9Q==}
     hasBin: true
 
-  rehydra@0.4.3:
-    resolution: {integrity: sha512-wZ1PmNrjzlSFAyqppSYnK6LWTZs6Xsfxvg15E3pNSbaJKaQ7Ycrd+H3MlLRs4kzO0zuyMwp4VAl53DAjtENoBA==}
+  rehydra@0.5.0:
+    resolution: {integrity: sha512-u7lQGiS1LlQbDnOcpssAvxydhV0wWBJ6dHIlTyV2bcsMtSPX6bbl8AkWdBxkEqmTdCnu87tCImXdgd9ftrYDww==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       better-sqlite3: ^11.0.0
@@ -9833,7 +9833,7 @@ snapshots:
     dependencies:
       jsesc: 3.1.0
 
-  rehydra@0.4.3(onnxruntime-web@1.19.2):
+  rehydra@0.5.0(onnxruntime-web@1.19.2):
     optionalDependencies:
       onnxruntime-node: 1.24.3
       onnxruntime-web: 1.19.2
